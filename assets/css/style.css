@@ -1,49 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Kaushan+Script|Luckiest+Guy');
+
 html, body {
-    background: linear-gradient(to bottom, #1b1b1b 0%,#383838 13%,#4e4e4e 24%,#0a0a0a 47%,#010101 50%,#0d0d0d 54%,#959595 100%);
-    height: 100%;
-    width: 100%;
-    color: azure;
+	background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,255,0,1) 25%, rgba(5,193,255,1) 50%, rgba(255,255,0,1) 75%, rgba(255,0,0,1) 100%);
+	height: 100%;
+	width: 100%;
+	color: azure;
+	font-family: 'Concert One', cursive;
 }
+
 header {
-    margin-bottom: 1em;
+	margin-bottom: 0 !important;
 }
-header .container {
-    height: 170px;
-    border: 1px solid red;
+
+	header .container {
+		height: 170px;
+		border: 1px solid crimson;
+		font-size: 63px;
+		font-family: 'Kaushan Script', cursive;
+		text-align: center;
+		vertical-align: middle;
+		background: url(../media/symphony.png);
+		color: crimson;
+	}
+
+		header .container img {
+			height: 100%;
+			padding-bottom: 8px;
+		}
+			/* Flip picture left-right */
+			header .container img.pull-left {
+				transform: rotateY(180deg);
+			}
+
+	header h1 {
+		line-height: 0.8em;
+	}
+
+.jumbotron {
+	background: transparent;
 }
+
 article, aside {
-    padding: 1em;
-    border-style: solid; 
-    border-color: #8c8b8b; 
-    border-width: 0 0 1px 0; 
-    border-radius: 20px; 
+	padding: 1em;
+	border-style: solid;
+	border-color: #8c8b8b;
+	border-radius: 20px;
+	text-align: center;
 }
+
 article {
-    border: 1px solid red;
-    height: 500px;
+	border: 1px solid coral;
+	height: 294px;
+	background-color: rgba(255, 127, 80, 0.4);
 }
+
 aside {
-    border: 1px solid green;
-    height: 500px;
+	border: 1px solid rgba(123, 104, 238, 0.8);
+	height: 294px;
+	background-color: rgba(123, 104, 238, 0.2);
 }
-aside label {
-    font-size: 1.5em;
+
+	aside label {
+		font-size: 2em;
+		color: aqua;
+		margin-bottom: 0;
+	}
+
+	aside label,
+	aside span {
+		display: block;
+	}
+
+	aside span {
+		font-family: 'Luckiest Guy', cursive;
+		font-size: x-large;
+	}
+
+	aside hr {
+		border-color: rgba(123, 104, 238, 0.8);
+		margin: 10px;
+	}
+
+article h1 {
+	vertical-align: middle;
 }
-aside label,
-aside span {
-    display: block;
-    text-align: center;
+
+article span, aside span {
+	text-shadow: black 1px 1px 7px;
 }
-aside hr {
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+
+article .win {
+	color: mediumseagreen;
 }
-#word:empty:before {
-    content: "No Word";
-    font-style: italic;
+
+article .lose {
+	color: crimson;
 }
+
+#status:empty:before {
+	animation: bulge 2s infinite;
+	content: "Press any key to get started!";
+}
+
+#status img {
+	opacity: 0;
+	height: 210px;
+}
+
+@keyframes bulge {
+	0%, 100% {
+		font-size: 0.7em;
+	}
+
+	50% {
+		font-size: 0.5em;
+	}
+}
+
+#word {
+	color: mediumseagreen;
+}
+
+	#word:empty:before {
+		content: "No Word";
+		font-style: italic;
+	}
+
 #guesses:empty:before {
-    content: "N/A";
-    font-style: italic;
+	content: "N/A";
+	font-style: italic;
 }
+
+#wrong-letters {
+	color: coral;
+}
+
+	#wrong-letters:empty:before {
+		content: "None, YAY!";
+		font-style: italic;
+	}
